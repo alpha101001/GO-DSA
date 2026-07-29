@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 	"reflect"
-	"slices"
+	"sort"
 )
 
 func threeSum(nums []int) [][]int {
-	slices.Sort(nums)
+	sort.Ints(nums)
 	record := [][]int{}
 	for i := 0; i < len(nums)-2; i++ {
 		var left, right = i + 1, len(nums) - 1
