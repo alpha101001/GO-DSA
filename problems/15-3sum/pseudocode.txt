@@ -1,0 +1,44 @@
+PROBLEM: 15. 3Sum
+LINK: https://leetcode.com/problems/3sum/description/
+FUNCTION: func threeSum(nums []int) [][]int
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+n <- len(arr)
+sort arr
+i <- 0
+
+for i <- 0 to n-3:
+if i>0 && arr[i] == arr[i-1] : continue
+  left <- i+1
+  right <- n-1
+  while left<right:
+    sum = arr[i]+arr[left]+arr[right]
+    if sum == 0 record left++ right--;
+    else if sum<0 : left++;
+    else if sum>0 : right--
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: threeSum([]int{-1, 0, 1, 2, -1, -4})
+Expected: [][]int{[]int{-1, -1, 2}, []int{-1, 0, 1}}
+
+Example 2: Example 2
+Call: threeSum([]int{0, 1, 1})
+Expected: [][]int{}
+Explanation: The only possible triplet does not sum up to 0.
+
+Example 3: Example 3
+Call: threeSum([]int{0, 0, 0})
+Expected: [][]int{[]int{0, 0, 0}}
+Explanation: The only possible triplet sums up to 0.
+
