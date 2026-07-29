@@ -1,0 +1,39 @@
+PROBLEM: 125. Valid Palindrome
+LINK: https://leetcode.com/problems/valid-palindrome/description/
+FUNCTION: func isPalindrome(s string) bool
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+l ← 0;  r ← n − 1
+while l < r:
+    if not alnum(s[l]): l++; continue
+    if not alnum(s[r]): r−−; continue
+    if lower(s[l]) != lower(s[r]): return false
+    l++; r−−
+return true
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: isPalindrome("A man, a plan, a canal: Panama")
+Expected: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+Example 2: Example 2
+Call: isPalindrome("race a car")
+Expected: false
+Explanation: "raceacar" is not a palindrome.
+
+Example 3: Example 3
+Call: isPalindrome(" ")
+Expected: true
+Explanation: s is an empty string "" after removing non-alphanumeric characters.
+
