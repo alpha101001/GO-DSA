@@ -1,0 +1,16 @@
+# Go build output
+*.exe
+*.test
+*.out
+bin/
+
+# IDE state
+.idea/
+.vscode/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Local agent state
+.omx/
