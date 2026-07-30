@@ -1,0 +1,37 @@
+PROBLEM: 11. Container With Most Water
+LINK: https://leetcode.com/problems/container-with-most-water/description/
+FUNCTION: func maxArea(height []int) int
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+left <- 0
+n <- len(arr)
+right <- n-1
+area <- 0
+
+while left<right:
+  new-area = (right-left) * min(arr[left],arr[right])
+  area = max(area,new-area)
+  if(arr[left]<arr[right]) left++
+  else right--
+return area
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7})
+Expected: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+
+Example 2: Example 2
+Call: maxArea([]int{1, 1})
+Expected: 1
+
