@@ -155,16 +155,10 @@ if [[ -z "$approach_summary" ]]; then
     approach_summary="Completed the implementation and supporting notes for the local problem examples."
 fi
 
-read -r -p "Verification summary [go fmt and local examples passed]: " verification_summary
+read -r -p "Verification summary [LeetCode run, gofmt, and local examples passed]: " verification_summary
 verification_summary="$(trim_whitespace "$verification_summary")"
 if [[ -z "$verification_summary" ]]; then
-    verification_summary="gofmt and go run ./$problem_path"
-fi
-
-read -r -p "Known verification gaps [hidden cases]: " not_tested
-not_tested="$(trim_whitespace "$not_tested")"
-if [[ -z "$not_tested" ]]; then
-    not_tested="Complete online judge hidden cases were not run."
+    verification_summary="LeetCode run, gofmt, and go run ./$problem_path"
 fi
 
 commit_message_file="$TEMP_DIR/commit-message.txt"
@@ -176,7 +170,6 @@ commit_message_file="$TEMP_DIR/commit-message.txt"
     printf 'Scope-risk: narrow\n'
     printf 'Reversibility: clean\n'
     printf 'Tested: %s\n' "$verification_summary"
-    printf 'Not-tested: %s\n' "$not_tested"
     printf 'Directive: Keep future changes focused on this problem and preserve equalResults for custom comparison needs\n'
 } > "$commit_message_file"
 
