@@ -1,0 +1,40 @@
+PROBLEM: 1. Two Sum
+LINK: https://leetcode.com/problems/two-sum/description/
+FUNCTION: func twoSum(nums []int, target int) []int
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+given arr;
+nums :=make(map[int]int)
+for i=0; i<len(arr); i++{
+  if nums[target - arr[i]] :
+    return [nums[target - arr[i]],i]
+  else:
+    nums[arr[i]] := i
+}
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: twoSum([]int{2, 7, 11, 15}, 9)
+Expected: []int{0, 1}
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+Example 2: Example 2
+Call: twoSum([]int{3, 2, 4}, 6)
+Expected: []int{1, 2}
+
+Example 3: Example 3
+Call: twoSum([]int{3, 3}, 6)
+Expected: []int{0, 1}
+
