@@ -1,0 +1,44 @@
+PROBLEM: 75. Sort Colors
+LINK: https://leetcode.com/problems/sort-colors/description/
+FUNCTION: func sortColors(nums []int) []int
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+n<- len(arr) -1
+low, mid, high := 0,0,n-1
+
+for mid<=high{
+  if(arr[mid] ==0){
+        arr[low], arr[mid] = arr[mid], arr[low]
+        low++
+        mid++
+}
+   else if(arr[mid]==1){
+    mid++
+
+}
+   else{
+    arr[high], arr[mid] = arr[mid], arr[high]
+      high--
+}
+}
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: sortColors([]int{2, 0, 2, 1, 1, 0})
+Expected: []int{0, 0, 1, 1, 2, 2}
+
+Example 2: Example 2
+Call: sortColors([]int{2, 0, 1})
+Expected: []int{0, 1, 2}
+
