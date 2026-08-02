@@ -1,0 +1,36 @@
+PROBLEM: 49. Group Anagrams
+LINK: https://leetcode.com/problems/group-anagrams/description/
+FUNCTION: func groupAnagrams(strs []string) [][]string
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+given words[], group <- map[string][]string
+
+for wd in range := words:
+    sorted = sort(wd)
+    group[sorted].append(wd);
+
+return group.values
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: groupAnagrams([]string{"eat", "tea", "tan", "ate", "nat", "bat"})
+Expected: [][]string{[]string{"bat"}, []string{"nat", "tan"}, []string{"ate", "eat", "tea"}}
+
+Example 2: Example 2
+Call: groupAnagrams([]string{""})
+Expected: [][]string{[]string{""}}
+
+Example 3: Example 3
+Call: groupAnagrams([]string{"a"})
+Expected: [][]string{[]string{"a"}}
+
