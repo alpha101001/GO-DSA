@@ -1,0 +1,35 @@
+PROBLEM: 242. Valid Anagram
+LINK: https://leetcode.com/problems/valid-anagram/description/
+FUNCTION: func isAnagram(s string, t string) bool
+
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+given s[] and t[]
+if len(s) != len(t) : return false
+var a <- map[char]int
+for c in range s:
+    a[s[c]]++
+for c in range t:
+    a[t[c]]--
+    if a[t[c]] <0: return false;
+return true
+----------------------------------
+--------------CODE----------------
+----------------------------------
+
+
+
+----------------------------------
+--------------TEST CASES----------
+----------------------------------
+
+Example 1: Example 1
+Call: isAnagram("anagram", "nagaram")
+Expected: true
+
+Example 2: Example 2
+Call: isAnagram("rat", "car")
+Expected: false
+
